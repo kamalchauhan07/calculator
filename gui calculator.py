@@ -14,7 +14,24 @@ def button(source, side, text, command=None):
     return storeObj
  
 class app(Frame):
-    
+    def _init_(self):
+        Frame._init_(self)
+        self.option_add('*Font', 'arial 20 bold')
+        self.pack(expand = YES, fill =BOTH)
+        self.master.title(' kamal_Calculator')
+
+        display = StringVar()
+        Entry( self , relief=RIDGE, textvariable=display,justify='right', bd=30, bg="powder blue").pack(side=TOP,expand=YES, fill=BOTH)
+        for clearButton in (["C"]):
+                erase = iCalc(self, TOP)
+                for ichar in clearButton:
+                    button(erase, LEFT, ichar, lambda storeObj=display, q=ichar: storeObj.set(''))
+
+        for numButton in ("789/", "456*", "123-", "0.+"):
+            FunctionNum = iCalc(self, TOP)
+            for iEquals in numButton:
+                button(FunctionNum, LEFT, iEquals, lambda storeObj=display, q=iEquals: storeObj.set(storeObj.get() + q))
+
                 
 # Start the GUI
 if __name__=='__main__':
