@@ -123,3 +123,23 @@ class TicTacToe:
 # starting the game
 tic_tac_toe = TicTacToe()
 tic_tac_toe.start()
+
+# fixing the spot
+            #self.fix_spot(row - 1, col - 1, player)
+
+            # checking whether current player is won or not
+            #if self.is_player_win(player):
+                #print(f"Player {player} wins the game!")
+                #break
+
+            # checking whether the game is draw or not
+            #if self.is_board_filled():
+                #print("Match Draw!")
+                #break
+
+            # swapping the turn
+            #player = self.swap_player_turn(player)
+
+        # showing the final view of board
+        #print()
+        #self.show_board()
