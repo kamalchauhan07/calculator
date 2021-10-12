@@ -116,6 +116,22 @@ class TicTacToe:
         # showing the final view of board
         print()
         self.show_board()
+        def play_game():
+    board, winner, counter = create_board(), 0, 1
+    print(board)
+    sleep(2)
+      
+    while winner == 0:
+        for player in [1, 2]:
+            board = random_place(board, player)
+            print("Board after " + str(counter) + " move")
+            print(board)
+            sleep(2)
+            counter += 1
+            winner = evaluate(board)
+            if winner != 0:
+                break
+    return(winner)
 
            
 
