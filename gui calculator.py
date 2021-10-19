@@ -50,7 +50,25 @@ class app(Frame):
 # Start the GUI
 if __name__=='__main__':
  app().mainloop()
+# Aditya code 
 
+    form.appendChild(cell)
+    let tbl = document.getElementById("display"); 
+    tbl.innerHTML = "";
+    if(localStorage.getItem(clicked_id+"1")!=null)
+    {
+        lis=JSON.parse(localStorage.getItem(clicked_id+"1"));
+        console.log(lis);
+        lis.forEach(myFunction);
+
+        function myFunction(value) {
+            let row = document.createElement("tr");
+            row.setAttribute("id","display_row");
+            let cell = document.createElement("td");
+            let cellText = document.createTextNode(value);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+            tbl.appendChild(row); 
 
 
 
